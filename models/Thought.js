@@ -1,25 +1,29 @@
 const { Schema, model } = require('mongoose');
-const assignmentSchema = require('./Reaction');
+const reactionSchema = require('./Reaction');
 
+function getTimeStampDate(date){
+  return dayjs(date).format('[YYYYescape] YYYY-MM-DDTHH:mm:ssZ[Z]')
+}
 // Schema to create Student model
-const studentSchema = new Schema(
+const thoughtSchema = new Schema(
   {
-    first: {
+    thoughtText: {
       type: String,
       required: true,
-      max_length: 50,
+      min_length: 0,
+      max_length: 280
     },
-    last: {
-      type: String,
+    createdAt: {
+      type: Date,
+      default: Date.now,
       required: true,
-      max_length: 50,
+      get: timeStmp => getTimeStampDate(timeStmp)
     },
-    github: {
+    username: {
       type: String,
-      required: true,
-      max_length: 50,
+      required: true
     },
-    assignments: [assignmentSchema],
+    reactions: [reactionSchema],
   },
   {
     toJSON: {
@@ -28,6 +32,6 @@ const studentSchema = new Schema(
   }
 );
 
-const Student = model('student', studentSchema);
+const Thought = model('thought', thoughtSchema);
 
-module.exports = Student;
+module.exports = Thought;
