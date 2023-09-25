@@ -4,7 +4,7 @@ const reactionSchema = require('./Reaction');
 function getTimeStampDate(date){
   return dayjs(date).format('[YYYYescape] YYYY-MM-DDTHH:mm:ssZ[Z]')
 }
-// Schema to create Student model
+// Schema to create User model
 const thoughtSchema = new Schema(
   {
     thoughtText: {
@@ -17,7 +17,7 @@ const thoughtSchema = new Schema(
       type: Date,
       default: Date.now,
       required: true,
-      get: timeStmp => getTimeStampDate(timeStmp)
+      get: timeStamp => getTimeStampDate(timeStamp)
     },
     username: {
       type: String,
