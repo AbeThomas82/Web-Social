@@ -2,19 +2,18 @@ const { ObjectId } = require('mongoose').Types;
 const { Thought, User } = require('../models');
 
 
-// Aggregate function for getting the overall grade using $avg
+// Execute the aggregate method on the Thought model and calculate the overall grade by using the $avg operator
 
 module.exports = {
   // Get all thoughts
   async getThoughts(req, res) {
     try {
       const thoughts = await Thought.find();
-
+      
       const thoughtObj = {
         thoughts,
       };
-
-      res.json(thoughtObj);
+      return res.json(thoughtObj);
     } catch (err) {
       console.log(err);
       return res.status(500).json(err);
@@ -24,10 +23,11 @@ module.exports = {
   async getSingleThought(req, res) {
     try {
       const thought = await Thought.findOne({ _id: req.params.thoughtId })
-        .select('-__v');
+        .select('-__v')
+        .lean();
 
       if (!thought) {
-        return res.status(404).json({ message: 'No thought with that ID' })
+        return res.status(404).json({ message: 'No thought with that ID' });
       }
 
       res.json({
@@ -53,7 +53,7 @@ module.exports = {
       const thought = await Thought.findOneAndRemove({ _id: req.params.thoughtId });
 
       if (!thought) {
-        return res.status(404).json({ message: 'No such thought exists' });
+        return res.status(404).json({ message: 'No such thought exists' })
       }
 
       const user = await User.findOneAndUpdate(
@@ -72,10 +72,9 @@ module.exports = {
 
   // Add an reaction to a thought
   async addReaction(req, res) {
-    console.log('You are adding an reaction');
-    console.log(req.body);
-
     try {
+      console.log('You are adding an reaction');
+      console.log(req.body);
       const thought = await Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
         { $addToSet: { reactions: req.body } },
@@ -85,7 +84,7 @@ module.exports = {
       if (!thought) {
         return res
           .status(404)
-          .json({ message: 'No thought found with that ID :(' });
+          .json({ message: 'No thought found with that ID :(' })
       }
 
       res.json(thought);
