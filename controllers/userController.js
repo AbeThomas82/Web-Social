@@ -68,4 +68,27 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+  async addFriend(req, res) {
+    try {
+      const user = await User.create(req.body);
+      res.json(user);
+    } catch (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+  },
+  async removeFriend(req, res) {
+    try {
+      const user = await User.findOneAndDelete({ _id: req.params.friendId });
+
+      if (!user) {
+        return res.status(404).json({ message: 'No friend with that ID' });
+      }
+
+      await Thought.deleteMany({ _id: { $in: user.friends } });
+      res.json({ message: 'User and friends deleted!' });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  },  
 };
