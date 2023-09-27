@@ -1,9 +1,6 @@
 const { ObjectId } = require('mongoose').Types;
 const { Thought, User } = require('../models');
 
-
-// Execute the aggregate method on the Thought model and calculate the overall grade by using the $avg operator
-
 module.exports = {
   // Get all thoughts
   async getThoughts(req, res) {
