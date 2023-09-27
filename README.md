@@ -6,7 +6,7 @@ In this challenge, we were required to assume the role of an imaginary social me
 ## Installation
 Modified JS scripts for the exercise.
 
-Required the installation of express.js and mongoose to implement seeding and organization of the information contained within the code.
+Required the installation of express.js, dayjs, and mongoose to implement seeding and organization of the information contained within the code.
 
 Used Insomnia to test out the social network API routes and use of controllers and models.
 
