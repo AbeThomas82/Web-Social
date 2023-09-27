@@ -22,6 +22,11 @@ The end user will be able to run the application from the CLI in Visual Studio C
 
 [ScreenCastify](https://drive.google.com/file/d/1LDaTuLIKQGmKXbr3o64OOV5No4YVvUy9/view)
 
+## Sources
+[Andrea Hergert](https://www.youtube.com/watch?v=CMaXuKK3Jjc)
+
+Module 18 Mini-Project
+
 ## Credits
 Spencer Sokol and Katherine Hopkins
 
@@ -30,5 +35,3 @@ Sangeetha Kaliaperumal of Calendly
 The TA's of AskBCS
 
 Lee Stevens, Jennifer Arevalo, Oscar Mercado, and other classmates
-
-Module 18 Mini-Project
