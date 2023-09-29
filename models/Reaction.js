@@ -3,7 +3,7 @@ const dayjs = require('dayjs');
 function getTimeStampDate(date){
   return dayjs(date).format('[YYYYescape] YYYY-MM-DDTHH:mm:ssZ[Z]')
 }
-
+// Schema created for reactions in the code and for testing
 const reactionSchema = new Schema(
   {
     reactionId: {
