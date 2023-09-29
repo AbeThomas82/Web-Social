@@ -15,12 +15,26 @@ Completed code pushed to GitHub.
 Application and demonstration done on ScreenCastify.  Links are provided further down in this README.
 
 ## Usage
-The end user will be able to run the application from the CLI in Visual Studio Code. Once the command "npm start" is entered, the port 3001 will be run, thus making the assignment ready to be tested on Insomnia. From there, the user can manipulate the database as needed. 
+The end user will be able to run the application from the CLI in Visual Studio Code. Once the command "npm start" is entered, the port 3001 will be run, thus making the assignment ready to be tested on Insomnia. From there, the user can manipulate the database as needed.
+
+The application works as follows:
+
+- Users are able as many people (users) in the database as possible. Insomnia details the addition of three users, but the possibilities are endless.
+
+- If the user properly selects the correct ID, he/she can then modify the properties associated within the user data structure.
+
+- With the proper ID, a field value can then be deleted.
+
+- Thoughts can also be manipulated in the same fashion.
+
+- Friends and Reactions can be created or deleted.
+
+With this application, I hope that the user found the rudimentary social media application experience as fruitful and as enjoying as it was for me in developing it. 
 
 ## Links
 [Repository](https://github.com/AbeThomas82/Web-Social)
 
-[ScreenCastify](https://drive.google.com/file/d/1LDaTuLIKQGmKXbr3o64OOV5No4YVvUy9/view)
+[ScreenCastify](https://drive.google.com/file/d/1xKWC1fOL6WsMH9LZsmcE0lNJt-Yl3t-1/view)
 
 ## Sources
 [Andrea Hergert](https://www.youtube.com/watch?v=CMaXuKK3Jjc)
